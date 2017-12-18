@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drs.mapper.SupplementTimeMapper" >
+
+	<resultMap id="BaseResultMap" type="com.drs.pojo.TbTime" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="start_time" property="startTime" jdbcType="TIME" />
+    <result column="end_time" property="endTime" jdbcType="TIME" />
+  </resultMap>
+
+	<insert id="insertTime" parameterType="com.drs.pojo.TbTime" >
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into tb_time(start_time,end_time)
+		values(#{startTime,jdbcType=TIME}, #{endTime,jdbcType=TIME})
+	</insert>
+	
+	<select id="selectAllTime" resultMap="BaseResultMap">
+	
+		SELECT id,start_time,end_time FROM tb_time ORDER BY start_time ASC
+		
+	</select>
+	
+</mapper>

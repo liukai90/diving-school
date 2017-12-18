@@ -1,0 +1,136 @@
+a {
+	text-decoration: none;
+}
+
+a img {
+	border: 0px;
+}
+li a{
+	width: 113px;
+	height: 152px;
+}
+li {
+	list-style-type: none;
+}
+
+.headr {
+	min-width: 960px;
+	width: auto;
+	height: 61px;
+	text-align: center;
+	background-color: #333;
+}
+
+.left {
+	float: left;
+	width: 480px;
+	height: 40px;
+	font-size: 40px;
+	color: #fff;
+	margin-top: 10px;
+}
+
+.right {
+	float: right;
+	width: 480px;
+	height: 40;
+	margin-top: 20px;
+}
+
+.fn {
+	font: "微软雅黑";
+	font-size: 20px;
+	color: #fff;
+}
+
+.navi {
+	width: 100%;
+	min-width: 1000px;
+	width: auto;
+	height: 160px;
+	overflow: hidden;
+}
+
+.menu {
+	/*min-width: 960px;*/
+	width: 1000px;
+	height: 160px;
+	margin-top: 5px;
+	overflow: hidden;
+}
+
+.f {
+	/*vertical-align: middle;*/
+	float: left;
+	width: 200px;
+	height: 150px;
+}
+
+.main {
+	min-width: 1000px;
+	width: auto;
+	height: 500px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #3498DB;
+	/*background: #fbedce;*/
+	/*border: #CCC ;*/
+	/*border: #333333;
+    solid 1px;*/
+}
+
+.wire {
+	margin: 0;
+	padding: 0;
+	min-width: 1000px;
+	width: auto;
+	height: 1px;
+	background-color: #303030;
+	overflow: hidden;
+}
+
+.footer {
+   	min-width: 970px;
+   	width: auto;
+   	height: auto;
+   	min-height: 230px;
+   	padding: 5px 0;
+   	line-height: 25px;
+   	text-align: center;
+   	background-color: #2980B9;
+   }
+   p{
+   	line-height: 40px;
+   	font: "微软雅黑";
+   	font-size: 20px;
+   	text-align: center;
+   	color: #fff;
+   }
+body, p, div, ul, ol, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, form, /*input,*/ select, label, table, tr, td, th, thead, tbody, tfoot{
+	margin: 0px auto;
+    padding: 0px;
+    border: 0px;
+}
+body {
+	width: 100%;
+	width: expression(document.body.clientWidth <=960? "960px": "auto");
+	min-width: 960px;
+	font-size: 12px;
+    font-family: Tahoma,Geneva,sans-serif;
+    background-position: top;
+    background-repeat: repeat-x;
+}
+
+.cen {
+	vertical-align: middle;
+}
+
+
+/*table
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 910px;
+    border: 0px;
+    text-align: left;
+}*/

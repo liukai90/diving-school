@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context" 
+	xmlns:jdbc="http://www.springframework.org/schema/jdbc"  
+	xmlns:jee="http://www.springframework.org/schema/jee" 
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:aop="http://www.springframework.org/schema/aop" 
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xmlns:jpa="http://www.springframework.org/schema/data/jpa"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd
+		http://www.springframework.org/schema/jdbc http://www.springframework.org/schema/jdbc/spring-jdbc-3.2.xsd
+		http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-3.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-3.2.xsd
+		http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa-1.3.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-3.2.xsd
+		http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.2.xsd">
+		
+	<context:component-scan base-package="com.drs.service"/>
+	<context:component-scan base-package="com.drs.controller"/>
+	<mvc:annotation-driven conversion-service="conversionService" />
+	<!--<bean id="validator" 
+	class="org.springframework.validation.beanvalidation.LocalValidatorFactoryBean">
+	<property name="providerClass" value="org.hibernate.validator.HibernateValidator"/>
+	<property name="validationMessageSource" ref="messageSource"/>
+	</bean>
+	<bean id="messageSource" 
+	class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+	<property name="basenames">
+	<list>
+	<value>classpath:CustomValidationMessages</value>
+	</list>
+	</property>
+	<property name="fileEncodings" value="utf-8"/>
+	<property name="cacheSeconds" value="120"/>
+	</bean>
+	-->
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/img/" mapping="/img/**"/>
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"/>
+		<property name="suffix" value=".jsp"/>
+	</bean>
+		<!-- 文件上传 -->
+	<bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		<!-- 设置上传文件的最大尺寸为5MB -->
+		<property name="maxUploadSize">
+			<value>5242880</value>
+		</property>
+	</bean>
+	<mvc:interceptors>
+	<!--多个拦截器,顺序执行 -->
+	<!-- 登陆认证拦截器 -->
+	<mvc:interceptor>
+		<mvc:mapping path="/**"/>
+		<bean class="com.drs.controller.interceptor.HandlerInterceptorLogin"></bean>
+	</mvc:interceptor>
+	</mvc:interceptors>
+	<bean id="conversionService" 
+	class="org.springframework.format.support.FormattingConversionServiceFactoryBean">
+		<property name="converters">
+			<list>
+				<bean class="com.drs.controller.converter.CustomDateConverter"/>
+			</list>
+		</property>
+	</bean>
+	<!--<bean class="cn.itcast.ssm.controller.exception.CustomExceptionResolver"></bean>
+	<bean id="multipartResolver"
+	class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	<property name="maxUploadSize">
+	<value>5242880</value>
+	</property>
+	</bean>
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/img/" mapping="/img/**"/>
+	-->
+	<!--不推荐使用
+	<bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping">
+		<property name="interceptors">
+			<list>
+			<ref bean="handlerInterceptor1"/>
+			<ref bean="handlerInterceptor2"/>
+			</list>
+		</property>
+	</bean>
+	<bean id="handlerInterceptor1" class="cn.itcast.ssm.controller.interceptor.HandlerInterceptor1"/>
+	<bean id="handlerInterceptor2" class="cn.itcast.ssm.controller.interceptor.HandlerInterceptor2"/>
+	-->
+	<!--<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="//**"/>
+			<bean class="cn.itcast.ssm.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.ssm.interceptor.HandlerInterceptor1"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/**"/>
+			<bean class="cn.itcast.ssm.interceptor.HandlerInterceptor2"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>-->
+</beans>

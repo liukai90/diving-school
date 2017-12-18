@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drs.mapper.SupplementCarMapper" >
+
+	<insert id="insertCar" parameterType="com.drs.pojo.TbCar">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+		SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into tb_car(mark,brand,subject,item,car_picture,
+		create_time,update_time)
+		values(#{mark},#{brand},#{subject},#{item},#{carPicture},#{createTime},#{updateTime})
+	</insert>
+	
+	<update id="updateByPrimaryKeySelective" parameterType="com.drs.pojo.TbCar" >
+    update tb_car
+    <set >
+      <if test="mark != null" >
+        mark = #{mark,jdbcType=VARCHAR},
+      </if>
+      <if test="brand != null" >
+        brand = #{brand,jdbcType=VARCHAR},
+      </if>
+      <if test="subject != null" >
+        subject = #{subject,jdbcType=VARCHAR},
+      </if>
+      <if test="item != null" >
+        item = #{item,jdbcType=VARCHAR},
+      </if>
+      <if test="carPicture != null" >
+        car_picture = #{carPicture,jdbcType=VARCHAR},
+      </if>
+      
+      <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+
+</mapper>

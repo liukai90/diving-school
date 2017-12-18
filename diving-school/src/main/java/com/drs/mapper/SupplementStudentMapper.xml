@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.drs.mapper.SupplementStudentMapper" >
+
+	<select id="getStudentByName" parameterType="java.lang.String" resultType="com.drs.pojo.TbStudent">
+	
+		select id,name,sex,idcard,phone,entry_fee,
+		birth,create_time,update_time from
+		 tb_student 
+		 where name like '%${name}%'
+	</select>
+  
+	<insert id="insertStudent" parameterType="com.drs.pojo.TbStudent">
+		<selectKey keyProperty="id" order="AFTER" resultType="java.lang.Integer">
+			SELECT LAST_INSERT_ID()
+		</selectKey>
+		insert into tb_student(name,sex,password,idcard,
+		phone,entry_fee,birth,create_time,update_time)
+		values(#{name},#{sex},#{password},#{idcard},#{phone},
+		#{entryFee},#{birth},#{createTime},#{updateTime})
+	</insert>
+	 <update id="updateByPrimaryKeySelective" parameterType="com.drs.pojo.TbAdministrator" >
+    update tb_student
+    <set >
+      <if test="name != null" >
+        name = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+       <!--<if test="password != null" >
+        password = #{password,jdbcType=VARCHAR},
+      </if>-->
+      <if test="phone != null" >
+        phone = #{phone,jdbcType=VARCHAR},
+      </if>
+      <if test="idcard != null" >
+        idcard = #{idcard,jdbcType=VARCHAR},
+      </if>
+      <if test="birth != null" >
+        birth = #{birth,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        create_time = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+     <if test="updateTime != null" >
+        update_time = #{updateTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  
+</mapper>

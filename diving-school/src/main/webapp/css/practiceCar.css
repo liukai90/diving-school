@@ -1,0 +1,60 @@
+.information{
+	margin-left: 250px;
+	min-width: 400px;
+	width: auto;
+	height:448px;
+	border: 1px solid #000000;
+	float: left;
+}
+.show{
+	min-width:600px;
+	width: auto;
+	height: 448px;
+	border: 1px solid #000000;
+	float: left;
+}
+input{
+	width: 80px;
+	height: 30px;
+	background: #D1DBBD;
+	
+}
+.key{
+	width: 150px;
+    text-align: right;
+    float: left;
+    height: 50px;
+    /*margin-top: 5px;*/
+    /* border: 1px solid black; */
+   /* margin-bottom: 5px;*/
+}
+.value{
+	width: 248px;
+    text-align: left;
+    margin-left: 10px;
+    float: left;
+    height: 50px;
+}
+.showInformation{
+	width:250px;
+	height:448px;
+	border: 1px solid #000000;
+	float:left;
+	
+}
+.showPicture{
+	background-color: white;
+	width:350px;
+	height: 350px;
+	border: 1px solid #000000;
+	float:left;
+}
+.tab{
+	font-size: 25px;
+	
+}
+.car{
+	width: 100%;
+	height: 100%;
+}
+

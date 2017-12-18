@@ -1,0 +1,195 @@
+   a{
+   	text-decoration: none;
+   }
+   a img{
+   	border:0;
+   	}
+   li a{
+   	width: 70;
+   	height: 90;
+   }
+   li{
+   	list-style-type:none;  
+   }
+   .headr{
+   min-width: 960px;	width: auto;
+   	height: 61px;
+   	text-align: center;
+   	background-color: #333;
+   }
+   .left{
+   	float: left;
+   	width: 480px;
+   	height: 40px;
+   	font-size: 40px;
+   	color: #fff;
+   	margin-top: 10px;
+   	
+   }
+   .right{
+   	float: right;
+   	width: 480px;
+   	height: 40;
+   	margin-top: 20px;
+   	
+   }
+   .fn{
+   	font: "微软雅黑";
+   	font-size: 20px;
+   	color:#fff;
+   }
+   .navi{
+   	width: 100%;
+   	min-width: 960px;
+   	width: auto;
+   	height: 100px;
+   	 overflow: hidden;
+   	
+   }
+   .menu{
+   	/*min-width: 960px;*/
+   	width: 960px;
+   	height: 100px;
+   	margin-top: 5px;
+   	 overflow: hidden;
+   }
+   .f{
+   	float: left;
+   	width: 135px;
+   	height:77px;
+   }
+   .f_data{
+ 	margin-top: 5px;
+   }
+   .main{
+   	min-width: 970px;
+   	width: auto;
+   	height: 430px;
+   	overflow-x: hidden;
+    overflow-y: auto;
+   	background-color: #F4F0EA;
+    /*background: #fbedce;*/
+    /*border: #CCC ;*/
+    /*border: #333333;
+    solid 1px;*/
+   }
+   .search_add{
+   	width:970px;
+   	height:40px;
+   	margin-top: 5px;
+   }
+   /*input{
+   	width: 50px;
+   	height: 30px;
+   	margin-top: 5px;
+   	margin-left: auto;
+    background-color: #F4F0EA;
+    text-align: left;
+   }*/
+.data{
+width: 950;
+min-height: 330;
+}
+.datalist{
+	margin-top: 5px;
+    text-align: center;
+    width: 100%;
+    background-color: #9CCBE0;
+}
+	tbody{
+	display: table-row-group;
+    vertical-align: middle;
+}
+tr{
+	display: table-row;
+    vertical-align: inherit;
+}
+ th{
+    background: #fbedce;
+    border: #CCC ;
+    solid 1px;
+    font-weight: bold;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+td{
+	background: #fff;
+    border: #CCC ;
+    solid 1px;
+    font-weight: bold;
+    text-align: center;
+    height: 35px;
+    line-height: 35px;
+}
+.wire{
+	margin:0;
+    padding:0;
+    min-width:970px;
+    width: auto;
+    height:1px;
+    background-color:#303030;
+    overflow:hidden;
+}
+.footer {
+    min-width: 970px;
+    width: auto;
+    height: auto;
+    min-height: 230px;
+    padding: 5px 0;
+    line-height: 25px;
+    text-align: center;
+    background-color: #F4F0EA;
+}
+.d_left{
+	float: left;
+	min-width: 870px;
+	width: auto;
+	height: 40px;
+}
+.d_left2{
+	float: left;
+	min-width: 100px;
+	width:auto ;
+	height: 40px;
+}
+.page{
+	width: 940px;
+    text-align: center;
+    height: 28px;
+    line-height: 28px;
+    margin-top:100px ;
+}
+.width200
+{
+    width: 200px;
+}
+body, p, div, ul, ol, li, dl, dd, dt, h1, h2, h3, h4, h5, h6, form, /*input,*/ select, label, table, tr, td, th, thead, tbody, tfoot{
+	margin: 0px auto;
+    padding: 0px;
+    border: 0px;
+}
+body
+{
+	width: 100%;
+	width:expression(document.body.clientWidth <= 960? "960px": "auto");
+    min-width:960px;
+    /*font-size: 12px;
+    font-family: Tahoma,Geneva,sans-serif;
+    background-position: top;
+    background-repeat: repeat-x;*/
+}
+.cen{
+	vertical-align: middle;
+}
+input{
+	height: 25px;
+}
+/*table
+{
+    border-collapse: collapse;
+    border-spacing: 0px;
+    width: 910px;
+    border: 0px;
+    text-align: left;
+}*/

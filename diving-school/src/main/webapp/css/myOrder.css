@@ -1,0 +1,39 @@
+.datalist {
+	margin-top: 5px;
+	text-align: center;
+	width: 100%;
+	background-color: #9CCBE0;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+}
+
+th {
+	background: #fbedce;
+	border: #CCC;
+	solid 1px;
+	font-weight: bold;
+	text-align: center;
+	height: 35px;
+	line-height: 35px;
+}
+
+td {
+	background: #fff;
+	border: #CCC;
+	solid 1px;
+	font-weight: bold;
+	text-align: center;
+	height: 35px;
+	line-height: 35px;
+}
+
+.f_data {
+	margin-top: 5px;
+}
+.width200
+{
+    width: 200px;
+}
